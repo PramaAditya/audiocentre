@@ -1,0 +1,514 @@
+title = "product-detail"
+layout = "default"
+url = "/product/:id"
+==
+
+<!-- shop details area start -->
+<section class="shop__area pt-50 pb-65">
+    <div class="shop__top grey-bg-6 pt-100 pb-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="product__modal-box d-flex">
+                        <div class="product__modal-nav mr-20">
+                            <nav>
+                                <div class="nav nav-tabs" id="product-details" role="tablist">
+                                    <a class="nav-item nav-link active" id="pro-one-tab" data-toggle="tab" href="#pro-one" role="tab" aria-controls="pro-one" aria-selected="true">
+                                    <div class="product__nav-img w-img">
+                                        <img src="{{ 'assets/images/H120-thumb.jpg' | theme }}" alt="">
+                                    </div>
+                                    </a>
+                                    <a class="nav-item nav-link" id="pro-two-tab" data-toggle="tab" href="#pro-two" role="tab" aria-controls="pro-two" aria-selected="false">
+                                    <div class="product__nav-img w-img">
+                                        <img src="{{ 'assets/images/H120Front-thumb.jpg' | theme }}" alt="">
+                                    </div>
+                                    </a>
+                                    <a class="nav-item nav-link" id="pro-three-tab" data-toggle="tab" href="#pro-three" role="tab" aria-controls="pro-three" aria-selected="false">
+                                    <div class="product__nav-img w-img">
+                                        <img src="{{ 'assets/images/H120Back-thumb.jpg' | theme }}" alt="">
+                                    </div>
+                                    </a>
+                                    <a class="nav-item nav-link" id="pro-four-tab" data-toggle="tab" href="#pro-four" role="tab" aria-controls="pro-four" aria-selected="false">
+                                    <div class="product__nav-img w-img">
+                                        <img src="{{ 'assets/images/H120AngleBack-thumb.jpg' | theme }}" alt="">
+                                    </div>
+                                    </a>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="tab-content mb-20" id="product-detailsContent">
+                            <div class="tab-pane fade show active" id="pro-one" role="tabpanel" aria-labelledby="pro-one-tab">
+                                <div class="product__modal-img product__thumb w-img">
+                                    <img src="{{ 'assets/images/H120.jpg' | theme }}" alt="">
+                                    <div class="product__sale ">
+                                        <span class="new">new</span>
+                                        <span class="percent">-16%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pro-two" role="tabpanel" aria-labelledby="pro-two-tab">
+                                <div class="product__modal-img product__thumb w-img">
+                                    <img src="{{ 'assets/images/H120Front.jpg' | theme }}" alt="">
+                                    <div class="product__sale ">
+                                        <span class="new">new</span>
+                                        <span class="percent">-16%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pro-three" role="tabpanel" aria-labelledby="pro-three-tab">
+                                <div class="product__modal-img product__thumb w-img">
+                                    <img src="{{ 'assets/images/H120Back.jpg' | theme }}" alt="">
+                                    <div class="product__sale ">
+                                        <span class="new">new</span>
+                                        <span class="percent">-16%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pro-four" role="tabpanel" aria-labelledby="pro-four-tab">
+                                <div class="product__modal-img product__thumb w-img">
+                                    <img src="{{ 'assets/images/H120AngleBack.jpg' | theme }}" alt="">
+                                    <div class="product__sale ">
+                                        <span class="new">new</span>
+                                        <span class="percent">-16%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="product__modal-content product__modal-content-2">
+                        <div class="page__title-breadcrumb">                                 
+                        <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Stereo</a></li>
+                            <li class="breadcrumb-item"><a href="index.html">Integrated Amplifier</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Hegel H120</li>
+                        </ol>
+                        </nav>
+                    </div>
+                        <h4 class="text-orange"><a href="product-details.html">HEGEL</a></h4>
+                        <h4><a href="product-details.html">H120 Integrated Amplifier</a></h4>
+                        <div class="product__price-2 mb-25">
+                            <span>$96.00</span>
+                            <span class="old-price">$96.00</span>
+                        </div>
+                        <div class="product__modal-des mb-30">
+                            <p>The digital-to-analog conversion is of the highest quality in the H120, with technology crafted from the ground up by Hegel. We take full control of the digital data stream, using technology developed from our absolute reference products, ensuring digital music delivery in its purest form.</p>
+                        </div>
+                        <div class="product__modal-form mb-30">
+                            <form action="#">
+                                <div class="product__modal-input color mb-20">
+                                    <label>Color <i class="fas fa-star-of-life"></i></label>
+                                    <select>
+                                        <option>- Please select -</option>
+                                        <option> Black</option>
+                                        <option> White</option>
+                                    </select>
+                                </div>
+                                <div class="product__modal-required mb-5">
+                                    <span >Required Fiields *</span>
+                                </div>
+                                <div class="pro-quan-area d-sm-flex align-items-center">
+                                    <div class="product-quantity-title">
+                                        <label>Quantity</label>
+                                    </div>
+                                    <div class="product-quantity mr-20 mb-20">
+                                        <div class="cart-plus-minus"><input type="text" value="1" /></div>
+                                    </div>
+                                    <div class="pro-cart-btn">
+                                        <a href="#" class="add-cart-btn mb-20">+ Add to Cart</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="product__tag mb-25">
+                            <span>Category:</span>
+                            <span><a href="#">Integrated Amplifier,</a></span>
+                            <span><a href="#">Stereo System,</a></span>
+                            <span><a href="#">Hegel,</a></span>                                    
+                        </div>
+                        <div class="product__share">
+                            <span>Share :</span>
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shop__bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="product__details-tab">
+                        <div class="product__details-tab-nav text-center mb-45">
+                            <nav>
+                                <div class="nav nav-tabs justify-content-start justify-content-sm-center" id="pro-details" role="tablist">
+                                    <a class="nav-item nav-link active" id="des-tab" data-toggle="tab" href="#des" role="tab" aria-controls="des" aria-selected="true">Description</a>
+                                    <a class="nav-item nav-link" id="add-tab" data-toggle="tab" href="#add" role="tab" aria-controls="add" aria-selected="false">Specifications</a>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="tab-content" id="pro-detailsContent">
+                            <div class="tab-pane fade show active" id="des" role="tabpanel">
+                                <div class="product__details-des">
+                                    <p>The digital-to-analog conversion is of the highest quality in the H120, with technology crafted from the ground up by Hegel. We take full control of the digital data stream, using technology developed from our absolute reference products, ensuring digital music delivery in its purest form. The result for you is perfectly natural sound, without any artifacts that make you want to turn the volume down. The H120 has Apple Airplay, Spotify Connect, IP Control, Control4 and upnp streaming. More features are already in progress and will be offered at no cost, using the easy software update functionality. All inputs are configurable for volume bypass, so you can integrate in a home theater or with (for example) a Bluesound or Sonos. Whatever you want, you can do it with the H120.</p>
+                                    
+                                    <div class="product__details-des-list mb-20">
+                                        <ul>
+                                            <li><span>Power Output - 2 x 75 W into 8 Ω</span></li>
+                                            <li><span>Minimum Load - 2 Ω</span></li>
+                                            <li><span>Analog Inputs - 1 x balanced (XLR), 2 x unbalanced (RCA) </span></li>
+                                            <li><span>Digital Inputs - 1 x coaxial (RCA), 3 x optical, 1 x USB, 1 x Network</span></li>
+                                            <li><span>Line level Output - 1 x unbalanced variable (RCA)</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="add" role="tabpanel">
+                                <div class="product__details-add">
+                                    <ul>
+                                        <li><span>Power Output</span></li>
+                                        <li><span>2 x 75 W into 8 Ω</span></li>
+                                        <li><span>Minimum Load</span></li>
+                                        <li><span>2 Ω</span></li>
+                                        <li><span>Analog Inputs</span></li>
+                                        <li><span>1 x balanced (XLR), 2 x unbalanced (RCA)</span></li>
+                                        <li><span>Digital Inputs</span></li>
+                                        <li><span>1 x coaxial (RCA), 3 x optical, 1 x USB, 1 x Network</span></li>
+                                        <li><span>Line level Output</span></li>
+                                        <li><span>1 x unbalanced variable (RCA)</span></li>
+                                        <li><span>Frequency response</span></li>
+                                        <li><span>5 Hz - 100 kHz</span></li>
+                                        <li><span>Signal-to-noise ratio</span></li>
+                                        <li><span>More than 100 dB</span></li>
+                                        <li><span>Crosstalk</span></li>
+                                        <li><span>Less than -100 dB</span></li>
+                                        <li><span>Distortion</span></li>
+                                        <li><span>Less than 0.01% @ 50 W/8 Ω/1 kHz</span></li>
+                                        <li><span>Intermodulation</span></li>
+                                        <li><span>Less than 0.01% (19 kHz + 20 kHz)</span></li>
+                                        <li><span>Damping factor</span></li>
+                                        <li><span>More than 2000 (main power output stage)</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- shop details area end -->
+
+<!-- related products area start -->
+<section class="related__product pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="section__title-wrapper text-center mb-55">
+                    <div class="section__title mb-10">
+                        <h2>Similar Products</h2>
+                    </div>
+                    <div class="section__sub-title">
+                        <p>Didn't find  what you are looking for? Here are some of our suggestions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="product__wrapper mb-60">
+                    <div class="product__thumb">
+                        <a href="product-details.html" class="w-img">
+                            <img src="{{ 'assets/images/g345EV30BG-B.jpg' | theme }}" alt="product-img">
+                            <img class="product__thumb-2" src="{{ 'assets/images/g345EV30BG-F.jpg' | theme }}" alt="product-img">
+                        </a>
+                        <div class="product__action transition-3">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
+                                <i class="fal fa-heart"></i>
+                            </a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare">
+                                <i class="fal fa-sliders-h"></i>
+                            </a>
+                            <!-- Button trigger modal -->
+                            <a href="javascript:void(0);"   data-toggle="modal" data-target="#productModalId">
+                                <i class="fal fa-search"></i>
+                            </a>
+
+                        </div>
+                        <div class="product__sale">
+                            <span class="new">new</span>
+                            <span class="percent">-16%</span>
+                        </div>
+                    </div>
+                    <div class="product__content p-relative">
+                        <div class="product__content-inner">
+                            <h4 class="text-orange"><a href="product-details.html">DYNAUDIO</a></h4>
+                                            <h4>Evoke 30 Floorstanding Speaker</h4>
+                            <div class="product__price transition-3">
+                                <span>$96.00</span>
+                                <span class="old-price">$96.00</span>
+                            </div>
+                        </div>
+                        <div class="add-cart p-absolute transition-3">
+                            <a href="#">+ Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="product__wrapper mb-60">
+                    <div class="product__thumb">
+                        <a href="product-details.html" class="w-img">
+                            <img src="{{ 'assets/images/g345EV30BG-B.jpg' | theme }}" alt="product-img">
+                            <img class="product__thumb-2" src="{{ 'assets/images/g345EV30BG-F.jpg' | theme }}" alt="product-img">
+                        </a>
+                        <div class="product__action transition-3">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
+                                <i class="fal fa-heart"></i>
+                            </a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare">
+                                <i class="fal fa-sliders-h"></i>
+                            </a>
+                            <!-- Button trigger modal -->
+                            <a href="javascript:void(0);"   data-toggle="modal" data-target="#productModalId">
+                                <i class="fal fa-search"></i>
+                            </a>
+
+                        </div>
+                        <div class="product__sale">
+                            <span class="new">new</span>
+                            <span class="percent">-16%</span>
+                        </div>
+                    </div>
+                    <div class="product__content p-relative">
+                        <div class="product__content-inner">
+                            <h4 class="text-orange"><a href="product-details.html">DYNAUDIO</a></h4>
+                                            <h4>Evoke 30 Floorstanding Speaker</h4>
+                            <div class="product__price transition-3">
+                                <span>$96.00</span>
+                                <span class="old-price">$96.00</span>
+                            </div>
+                        </div>
+                        <div class="add-cart p-absolute transition-3">
+                            <a href="#">+ Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="product__wrapper mb-60">
+                    <div class="product__thumb">
+                        <a href="product-details.html" class="w-img">
+                            <img src="{{ 'assets/images/g345EV30BG-B.jpg' | theme }}" alt="product-img">
+                            <img class="product__thumb-2" src="{{ 'assets/images/g345EV30BG-F.jpg' | theme }}" alt="product-img">
+                        </a>
+                        <div class="product__action transition-3">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
+                                <i class="fal fa-heart"></i>
+                            </a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare">
+                                <i class="fal fa-sliders-h"></i>
+                            </a>
+                            <!-- Button trigger modal -->
+                            <a href="javascript:void(0);"   data-toggle="modal" data-target="#productModalId">
+                                <i class="fal fa-search"></i>
+                            </a>
+
+                        </div>
+                        <div class="product__sale">
+                            <span class="new">new</span>
+                            <span class="percent">-16%</span>
+                        </div>
+                    </div>
+                    <div class="product__content p-relative">
+                        <div class="product__content-inner">
+                            <h4 class="text-orange"><a href="product-details.html">DYNAUDIO</a></h4>
+                                            <h4>Evoke 30 Floorstanding Speaker</h4>
+                            <div class="product__price transition-3">
+                                <span>$96.00</span>
+                                <span class="old-price">$96.00</span>
+                            </div>
+                        </div>
+                        <div class="add-cart p-absolute transition-3">
+                            <a href="#">+ Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="product__wrapper mb-60">
+                    <div class="product__thumb">
+                        <a href="product-details.html" class="w-img">
+                            <img src="{{ 'assets/images/g345EV30BG-B.jpg' | theme }}" alt="product-img">
+                            <img class="product__thumb-2" src="{{ 'assets/images/g345EV30BG-F.jpg' | theme }}" alt="product-img">
+                        </a>
+                        <div class="product__action transition-3">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
+                                <i class="fal fa-heart"></i>
+                            </a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare">
+                                <i class="fal fa-sliders-h"></i>
+                            </a>
+                            <!-- Button trigger modal -->
+                            <a href="javascript:void(0);"   data-toggle="modal" data-target="#productModalId">
+                                <i class="fal fa-search"></i>
+                            </a>
+
+                        </div>
+                        <div class="product__sale">
+                            <span class="new">new</span>
+                            <span class="percent">-16%</span>
+                        </div>
+                    </div>
+                    <div class="product__content p-relative">
+                        <div class="product__content-inner">
+                            <h4 class="text-orange"><a href="product-details.html">DYNAUDIO</a></h4>
+                                            <h4>Evoke 30 Floorstanding Speaker</h4>
+                            <div class="product__price transition-3">
+                                <span>$96.00</span>
+                                <span class="old-price">$96.00</span>
+                            </div>
+                        </div>
+                        <div class="add-cart p-absolute transition-3">
+                            <a href="#">+ Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- related products area end -->
+
+<!-- shop modal start -->
+<!-- Modal -->
+<div class="modal fade" id="productModalId" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered product-modal" role="document">
+        <div class="modal-content">
+            <div class="product__modal-wrapper p-relative">
+                <div class="product__modal-close p-absolute">
+                    <button   data-dismiss="modal"><i class="fal fa-times"></i></button>
+                </div>
+                <div class="product__modal-inner">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+                            <div class="product__modal-box">
+                                <div class="tab-content mb-20" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <div class="product__modal-img w-img">
+                                            <img src="{{ 'assets/img/shop/product/quick-view/quick-big-1.jpg' | theme }}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                        <div class="product__modal-img w-img">
+                                            <img src="{{ 'assets/img/shop/product/quick-view/quick-big-2.jpg' | theme }}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                        <div class="product__modal-img w-img">
+                                            <img src="{{ 'assets/img/shop/product/quick-view/quick-big-3.jpg' | theme }}" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <nav>
+                                    <div class="nav nav-tabs justify-content-between" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">
+                                        <div class="product__nav-img w-img">
+                                            <img src="{{ 'assets/img/shop/product/quick-view/quick-sm-1.jpg' | theme }}" alt="">
+                                        </div>
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                        <div class="product__nav-img w-img">
+                                            <img src="{{ 'assets/img/shop/product/quick-view/quick-sm-2.jpg' | theme }}" alt="">
+                                        </div>
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                                        <div class="product__nav-img w-img">
+                                            <img src="{{ 'assets/img/shop/product/quick-view/quick-sm-3.jpg' | theme }}" alt="">
+                                        </div>
+                                        </a>
+                                    </div>
+                                    </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+                            <div class="product__modal-content">
+                                <h4><a href="product-details.html">Wooden container Bowl</a></h4>
+                                <div class="rating rating-shop mb-15">
+                                    <ul>
+                                        <li><span><i class="fas fa-star"></i></span></li>
+                                        <li><span><i class="fas fa-star"></i></span></li>
+                                        <li><span><i class="fas fa-star"></i></span></li>
+                                        <li><span><i class="fas fa-star"></i></span></li>
+                                        <li><span><i class="fal fa-star"></i></span></li>
+                                    </ul>
+                                    <span class="rating-no ml-10">
+                                        3 rating(s)
+                                    </span>
+                                </div>
+                                <div class="product__price-2 mb-25">
+                                    <span>$96.00</span>
+                                    <span class="old-price">$96.00</span>
+                                </div>
+                                <div class="product__modal-des mb-30">
+                                    <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram.</p>
+                                </div>
+                                <div class="product__modal-form">
+                                    <form action="#">
+                                        <div class="product__modal-input size mb-20">
+                                            <label>Size <i class="fas fa-star-of-life"></i></label>
+                                            <select>
+                                                <option>- Please select -</option>
+                                                <option> S</option>
+                                                <option> M</option>
+                                                <option> L</option>
+                                                <option> XL</option>
+                                                <option> XXL</option>
+                                            </select>
+                                        </div>
+                                        <div class="product__modal-input color mb-20">
+                                            <label>Color <i class="fas fa-star-of-life"></i></label>
+                                            <select>
+                                                <option>- Please select -</option>
+                                                <option> Black</option>
+                                                <option> Yellow</option>
+                                                <option> Blue</option>
+                                                <option> White</option>
+                                                <option> Ocean Blue</option>
+                                            </select>
+                                        </div>
+                                        <div class="product__modal-required mb-5">
+                                            <span >Repuired Fiields *</span>
+                                        </div>
+                                        <div class="pro-quan-area d-lg-flex align-items-center">
+                                            <div class="product-quantity-title">
+                                                <label>Quantity</label>
+                                            </div>
+                                            <div class="product-quantity">
+                                                <div class="cart-plus-minus"><input type="text" value="1" /></div>
+                                            </div>
+                                            <div class="pro-cart-btn ml-20">
+                                                <a href="#" class="add-cart-btn mr-10">+ Add to Cart</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- shop modal end -->
