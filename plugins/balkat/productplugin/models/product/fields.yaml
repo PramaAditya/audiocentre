@@ -1,0 +1,25 @@
+fields:
+    name:
+        label: 'Nama Produk'
+        span: auto
+        placeholder: 'Nama Produk'
+        required: 1
+        type: text
+    price:
+        label: 'Harga (Rp)'
+        span: auto
+        placeholder: 'Harga (Rp)'
+        required: 1
+        type: number
+    discounted_price:
+        label: 'Harga Diskon (Rp)'
+        span: auto
+        placeholder: 'Harga Diskon (Rp)'
+        type: text
+    description:
+        label: 'Deskripsi Produk'
+        span: auto
+        size: large
+        placeholder: Deskripsi
+        required: 1
+        type: textarea

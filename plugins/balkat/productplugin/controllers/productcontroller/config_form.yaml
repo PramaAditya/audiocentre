@@ -1,0 +1,17 @@
+name: ProductController
+modelClass: Balkat\ProductPlugin\Models\Product
+form: $/balkat/productplugin/models/product/fields.yaml
+defaultRedirect: balkat/productplugin/productcontroller
+create:
+    title: 'Tambah Produk Baru'
+    redirect: 'balkat/productplugin/productcontroller/update/:id'
+    redirectClose: balkat/productplugin/productcontroller
+    flashSave: 'Anda berhasil menambahkan produk baru'
+update:
+    title: 'Ubah Data Produk'
+    redirect: balkat/productplugin/productcontroller
+    redirectClose: balkat/productplugin/productcontroller
+    flashSave: 'Data Produk Berhasil Diubah'
+    flashDelete: 'Data Produk Berhasil Dihapus'
+preview:
+    title: 'Data Produk'

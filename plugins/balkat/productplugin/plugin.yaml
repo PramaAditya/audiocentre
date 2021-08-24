@@ -1,0 +1,11 @@
+plugin:
+    name: 'balkat.productplugin::lang.plugin.name'
+    description: 'balkat.productplugin::lang.plugin.description'
+    author: balkat
+    icon: oc-icon-database
+    homepage: ''
+navigation:
+    product:
+        label: Product
+        url: product
+        icon: icon-cart-plus

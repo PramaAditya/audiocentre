@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table balkat_productplugin_product'
+    - builder_table_create_balkat_productplugin_product.php
+1.0.3:
+    - 'Updated table balkat_productplugin_product'
+    - builder_table_update_balkat_productplugin_product.php
+1.0.4:
+    - 'Updated table balkat_productplugin_product'
+    - builder_table_update_balkat_productplugin_product_2.php
+1.0.5:
+    - 'Created table balkat_productplugin_product_image'
+    - builder_table_create_balkat_productplugin_product_image.php

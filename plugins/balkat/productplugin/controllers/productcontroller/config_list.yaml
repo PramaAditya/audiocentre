@@ -1,0 +1,15 @@
+title: ProductController
+modelClass: Balkat\ProductPlugin\Models\Product
+list: $/balkat/productplugin/models/product/columns.yaml
+recordUrl: 'balkat/productplugin/productcontroller/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+defaultSort:
+    column: id
+    direction: asc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
