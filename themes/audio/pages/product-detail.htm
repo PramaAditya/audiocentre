@@ -2,7 +2,16 @@ title = "product-detail"
 layout = "default"
 url = "/product/:id"
 ==
-
+use Balkat\ProductPlugin\Models\Product;
+function onStart()
+{
+	$product_id = $this->param('id');
+  	$this['product'] = Product::find($product_id);
+  	$this['percentage'] = number_format((($this['product']['price'] - $this['product']['discounted_price']) / $this['product']['price'] * 100), 2, '.', ',');
+  	$this['product']['price'] = number_format($this['product']['price'], 2, '.', ',');
+  	$this['product']['discounted_price'] = number_format($this['product']['discounted_price'], 2, '.', ',');
+}
+==
 <!-- shop details area start -->
 <section class="shop__area pt-50 pb-65">
     <div class="shop__top grey-bg-6 pt-100 pb-90">
@@ -12,6 +21,12 @@ url = "/product/:id"
                     <div class="product__modal-box d-flex">
                         <div class="product__modal-nav mr-20">
                             <nav>
+                            	<!--
+                            	{% for image in product.image_urls %}
+                            		<img src="{{ image }}" alt="Pic">
+                            		{{ image }}
+								{% endfor %}
+								-->
                                 <div class="nav nav-tabs" id="product-details" role="tablist">
                                     <a class="nav-item nav-link active" id="pro-one-tab" data-toggle="tab" href="#pro-one" role="tab" aria-controls="pro-one" aria-selected="true">
                                     <div class="product__nav-img w-img">
@@ -41,8 +56,8 @@ url = "/product/:id"
                                 <div class="product__modal-img product__thumb w-img">
                                     <img src="{{ 'assets/images/H120.jpg' | theme }}" alt="">
                                     <div class="product__sale ">
-                                        <span class="new">new</span>
-                                        <span class="percent">-16%</span>
+                                        <span class="new">{{ product.status }}</span>
+                                        <span class="percent">-{{ percentage }}%</span>
                                     </div>
                                 </div>
                             </div>
@@ -50,8 +65,8 @@ url = "/product/:id"
                                 <div class="product__modal-img product__thumb w-img">
                                     <img src="{{ 'assets/images/H120Front.jpg' | theme }}" alt="">
                                     <div class="product__sale ">
-                                        <span class="new">new</span>
-                                        <span class="percent">-16%</span>
+                                        <span class="new">{{ product.status }}</span>
+                                        <span class="percent">-{{ percentage }}%</span>
                                     </div>
                                 </div>
                             </div>
@@ -59,8 +74,8 @@ url = "/product/:id"
                                 <div class="product__modal-img product__thumb w-img">
                                     <img src="{{ 'assets/images/H120Back.jpg' | theme }}" alt="">
                                     <div class="product__sale ">
-                                        <span class="new">new</span>
-                                        <span class="percent">-16%</span>
+                                        <span class="new">{{ product.status }}</span>
+                                        <span class="percent">-{{ percentage }}%</span>
                                     </div>
                                 </div>
                             </div>
@@ -68,8 +83,8 @@ url = "/product/:id"
                                 <div class="product__modal-img product__thumb w-img">
                                     <img src="{{ 'assets/images/H120AngleBack.jpg' | theme }}" alt="">
                                     <div class="product__sale ">
-                                        <span class="new">new</span>
-                                        <span class="percent">-16%</span>
+                                        <span class="new">{{ product.status }}</span>
+                                        <span class="percent">-{{ percentage }}%</span>
                                     </div>
                                 </div>
                             </div>
@@ -87,14 +102,14 @@ url = "/product/:id"
                         </ol>
                         </nav>
                     </div>
-                        <h4 class="text-orange"><a href="product-details.html">HEGEL</a></h4>
-                        <h4><a href="product-details.html">H120 Integrated Amplifier</a></h4>
+                        <h4 class="text-orange"><a href="product-details.html">{{ product.name }}</a></h4>
+                        <!-- <h4><a href="product-details.html">{{ product.name }}</a></h4> -->
                         <div class="product__price-2 mb-25">
-                            <span>$96.00</span>
-                            <span class="old-price">$96.00</span>
+                            <span>Rp {{ product.discounted_price }}</span>
+                            <span class="old-price">Rp {{ product.price }}</span>
                         </div>
                         <div class="product__modal-des mb-30">
-                            <p>The digital-to-analog conversion is of the highest quality in the H120, with technology crafted from the ground up by Hegel. We take full control of the digital data stream, using technology developed from our absolute reference products, ensuring digital music delivery in its purest form.</p>
+                            <p>{{ product.short_description }}</p>
                         </div>
                         <div class="product__modal-form mb-30">
                             <form action="#">
@@ -159,15 +174,12 @@ url = "/product/:id"
                         <div class="tab-content" id="pro-detailsContent">
                             <div class="tab-pane fade show active" id="des" role="tabpanel">
                                 <div class="product__details-des">
-                                    <p>The digital-to-analog conversion is of the highest quality in the H120, with technology crafted from the ground up by Hegel. We take full control of the digital data stream, using technology developed from our absolute reference products, ensuring digital music delivery in its purest form. The result for you is perfectly natural sound, without any artifacts that make you want to turn the volume down. The H120 has Apple Airplay, Spotify Connect, IP Control, Control4 and upnp streaming. More features are already in progress and will be offered at no cost, using the easy software update functionality. All inputs are configurable for volume bypass, so you can integrate in a home theater or with (for example) a Bluesound or Sonos. Whatever you want, you can do it with the H120.</p>
+                                    <p>{{ product.description }}</p>
                                     
                                     <div class="product__details-des-list mb-20">
                                         <ul>
-                                            <li><span>Power Output - 2 x 75 W into 8 Ω</span></li>
-                                            <li><span>Minimum Load - 2 Ω</span></li>
-                                            <li><span>Analog Inputs - 1 x balanced (XLR), 2 x unbalanced (RCA) </span></li>
-                                            <li><span>Digital Inputs - 1 x coaxial (RCA), 3 x optical, 1 x USB, 1 x Network</span></li>
-                                            <li><span>Line level Output - 1 x unbalanced variable (RCA)</span></li>
+                                            <li><span>Static List</span></li>
+                                            <li><span>Static List</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -175,28 +187,10 @@ url = "/product/:id"
                             <div class="tab-pane fade" id="add" role="tabpanel">
                                 <div class="product__details-add">
                                     <ul>
-                                        <li><span>Power Output</span></li>
-                                        <li><span>2 x 75 W into 8 Ω</span></li>
-                                        <li><span>Minimum Load</span></li>
-                                        <li><span>2 Ω</span></li>
-                                        <li><span>Analog Inputs</span></li>
-                                        <li><span>1 x balanced (XLR), 2 x unbalanced (RCA)</span></li>
-                                        <li><span>Digital Inputs</span></li>
-                                        <li><span>1 x coaxial (RCA), 3 x optical, 1 x USB, 1 x Network</span></li>
-                                        <li><span>Line level Output</span></li>
-                                        <li><span>1 x unbalanced variable (RCA)</span></li>
-                                        <li><span>Frequency response</span></li>
-                                        <li><span>5 Hz - 100 kHz</span></li>
-                                        <li><span>Signal-to-noise ratio</span></li>
-                                        <li><span>More than 100 dB</span></li>
-                                        <li><span>Crosstalk</span></li>
-                                        <li><span>Less than -100 dB</span></li>
-                                        <li><span>Distortion</span></li>
-                                        <li><span>Less than 0.01% @ 50 W/8 Ω/1 kHz</span></li>
-                                        <li><span>Intermodulation</span></li>
-                                        <li><span>Less than 0.01% (19 kHz + 20 kHz)</span></li>
-                                        <li><span>Damping factor</span></li>
-                                        <li><span>More than 2000 (main power output stage)</span></li>
+                                        <li><span>Static Specs</span></li>
+                                        <li><span>Detail Specs</span></li>
+                                        <li><span>Static Specs</span></li>
+                                        <li><span>Detail Specs</span></li>
                                     </ul>
                                 </div>
                             </div>

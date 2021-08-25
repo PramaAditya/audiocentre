@@ -13,11 +13,13 @@ columns:
         type: number
         searchable: true
         sortable: true
+        format: "Rp%.2f"
     discounted_price:
         label: discounted_price
         type: number
         searchable: true
         sortable: true
+        format: "Rp%.2f"
     description:
         label: description
         type: text

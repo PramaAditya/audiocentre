@@ -7,5 +7,5 @@ plugin:
 navigation:
     product:
         label: Product
-        url: product
+        url: balkat/productplugin/productcontroller
         icon: icon-cart-plus

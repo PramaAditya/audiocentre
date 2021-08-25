@@ -17,9 +17,26 @@ fields:
         placeholder: 'Harga Diskon (Rp)'
         type: text
     description:
-        label: 'Deskripsi Produk'
+        label: 'Rich editor'
+        size: ''
         span: auto
-        size: large
-        placeholder: Deskripsi
-        required: 1
-        type: textarea
+        type: richeditor
+tabs:
+    fields:
+        repeater1:
+            label: Repeater
+            prompt: 'Add new item'
+            style: default
+            span: full
+            type: repeater
+            tab: 'Tab 1'
+            form:
+                fields:
+                    text1:
+                        label: Text
+                        span: auto
+                        type: text
+                    textarea1:
+                        label: 'Text area'
+                        span: auto
+                        type: textarea
