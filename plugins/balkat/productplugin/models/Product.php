@@ -8,7 +8,7 @@ use Model;
 class Product extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+    public $jsonable = ['image_urls'];
 
     /**
      * @var string The database table used by the model.

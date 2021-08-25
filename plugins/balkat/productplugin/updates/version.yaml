@@ -12,3 +12,24 @@
 1.0.5:
     - 'Created table balkat_productplugin_product_image'
     - builder_table_create_balkat_productplugin_product_image.php
+1.0.6:
+    - 'Updated table balkat_productplugin_product'
+    - builder_table_update_balkat_productplugin_product_3.php
+1.0.7:
+    - 'Updated table balkat_productplugin_product'
+    - builder_table_update_balkat_productplugin_product_4.php
+1.0.8:
+    - 'Updated table balkat_productplugin_product'
+    - builder_table_update_balkat_productplugin_product_5.php
+1.0.9:
+    - 'Updated table balkat_productplugin_product'
+    - builder_table_update_balkat_productplugin_product_6.php
+1.0.10:
+    - 'Updated table balkat_productplugin_product'
+    - builder_table_update_balkat_productplugin_product_7.php
+1.0.11:
+    - 'Updated table balkat_productplugin_product'
+    - builder_table_update_balkat_productplugin_product_8.php
+1.0.12:
+    - 'Drop table balkat_productplugin_product_image'
+    - builder_table_delete_balkat_productplugin_product_image.php
