@@ -33,3 +33,9 @@
 1.0.12:
     - 'Drop table balkat_productplugin_product_image'
     - builder_table_delete_balkat_productplugin_product_image.php
+1.0.13:
+    - 'Updated table balkat_productplugin_product'
+    - builder_table_update_balkat_productplugin_product_9.php
+1.0.14:
+    - 'Updated table balkat_productplugin_product'
+    - builder_table_update_balkat_productplugin_product_10.php

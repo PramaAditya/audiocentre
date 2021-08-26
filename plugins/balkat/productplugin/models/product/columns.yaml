@@ -13,14 +13,29 @@ columns:
         type: number
         searchable: true
         sortable: true
-        format: "Rp%.2f"
+        format: 'Rp %0.2f'
     discounted_price:
         label: discounted_price
         type: number
         searchable: true
         sortable: true
-        format: "Rp%.2f"
+        format: 'Rp %0.2f'
     description:
         label: description
         type: text
         searchable: true
+    status:
+        label: 'Status Barang'
+        type: text
+        searchable: true
+        sortable: true
+    short_description:
+        label: 'Deskripsi Singkat'
+        type: text
+        searchable: true
+    description_lists[name]:
+        label: 'Check List Deskripsi'
+        type: text
+    specification_lists[name]:
+        label: 'Daftar Spesifikasi'
+        type: text

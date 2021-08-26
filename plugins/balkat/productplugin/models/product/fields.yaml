@@ -5,38 +5,105 @@ fields:
         placeholder: 'Nama Produk'
         required: 1
         type: text
+    is_call_for_price:
+        label: 'Apakah Pelanggan Harus Menelepon untuk Mengetahui Harga Barang?'
+        span: auto
+        default: 0
+        required: 1
+        trigger:
+            action: disable
+            field: price
+        type: switch
     price:
-        label: 'Harga (Rp)'
+        label: 'Harga Barang (Rp)'
         span: auto
         placeholder: 'Harga (Rp)'
         required: 1
+        trigger:
+            action: disable
+            field: is_call_for_price
+            condition: checked
         type: number
     discounted_price:
         label: 'Harga Diskon (Rp)'
         span: auto
         placeholder: 'Harga Diskon (Rp)'
-        type: text
-    description:
-        label: 'Rich editor'
-        size: ''
+        trigger:
+            action: disable
+            field: is_call_for_price
+            condition: checked
+        type: number
+    short_description:
+        label: 'Deskripsi Singkat Barang'
+        size: large
         span: auto
+        placeholder: 'Deskripsi Singkat'
+        stretch: 0
         type: richeditor
+    description:
+        label: 'Deskripsi Barang'
+        size: huge
+        span: auto
+        placeholder: 'Deskripsi Barang'
+        type: richeditor
+    status:
+        label: 'Status Barang'
+        options:
+            Promo: promo
+            'Five Star': fivestar
+            New: new
+            Hot: hot
+        showSearch: true
+        span: auto
+        type: dropdown
 tabs:
     fields:
-        repeater1:
-            label: Repeater
-            prompt: 'Add new item'
+        description_lists:
+            label: 'Check List Deskripsi'
+            prompt: 'Tambah Item'
+            minItems: '0'
             style: default
-            span: full
+            span: auto
             type: repeater
-            tab: 'Tab 1'
+            tab: 'Deskripsi & Spesifikasi'
             form:
                 fields:
-                    text1:
-                        label: Text
+                    description_list_name:
+                        label: 'Item Deskripsi'
                         span: auto
                         type: text
-                    textarea1:
-                        label: 'Text area'
+        specification_lists:
+            label: 'Daftar Spesifikasi Barang'
+            prompt: 'Tambah Item Spesifikasi'
+            minItems: '0'
+            style: default
+            span: auto
+            type: repeater
+            tab: 'Deskripsi & Spesifikasi'
+            form:
+                fields:
+                    specification_name:
+                        label: 'Item Spesifikasi'
                         span: auto
-                        type: textarea
+                        type: text
+                    specification_detail:
+                        label: 'Detail Spesifikasi'
+                        span: auto
+                        type: text
+secondaryTabs:
+    fields:
+        image_urls:
+            label: 'Gambar Produk'
+            prompt: 'Tambah Gambar'
+            minItems: '1'
+            style: default
+            span: auto
+            type: repeater
+            tab: 'Gambar Produk'
+            form:
+                fields:
+                    image_url:
+                        label: 'Unggah Gambar'
+                        mode: image
+                        span: auto
+                        type: mediafinder

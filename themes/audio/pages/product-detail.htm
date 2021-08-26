@@ -8,8 +8,8 @@ function onStart()
 	$product_id = $this->param('id');
   	$this['product'] = Product::find($product_id);
   	$this['percentage'] = number_format((($this['product']['price'] - $this['product']['discounted_price']) / $this['product']['price'] * 100), 2, '.', ',');
-  	$this['product']['price'] = number_format($this['product']['price'], 2, '.', ',');
-  	$this['product']['discounted_price'] = number_format($this['product']['discounted_price'], 2, '.', ',');
+  	$this['price'] = number_format($this['product']['price'], 2, '.', ',');
+  	$this['discount_price'] = number_format($this['product']['discounted_price'], 2, '.', ',');
 }
 ==
 <!-- shop details area start -->
@@ -56,8 +56,12 @@ function onStart()
                                 <div class="product__modal-img product__thumb w-img">
                                     <img src="{{ 'assets/images/H120.jpg' | theme }}" alt="">
                                     <div class="product__sale ">
+                                    	{% if product.status %}
                                         <span class="new">{{ product.status }}</span>
+                                    	{% endif %}
+                                    	{% if product.discounted_price != 0 %}
                                         <span class="percent">-{{ percentage }}%</span>
+                                    	{% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -65,8 +69,12 @@ function onStart()
                                 <div class="product__modal-img product__thumb w-img">
                                     <img src="{{ 'assets/images/H120Front.jpg' | theme }}" alt="">
                                     <div class="product__sale ">
+                                    	{% if product.status %}
                                         <span class="new">{{ product.status }}</span>
+                                    	{% endif %}
+                                    	{% if product.discounted_price != 0 %}
                                         <span class="percent">-{{ percentage }}%</span>
+                                    	{% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -74,8 +82,12 @@ function onStart()
                                 <div class="product__modal-img product__thumb w-img">
                                     <img src="{{ 'assets/images/H120Back.jpg' | theme }}" alt="">
                                     <div class="product__sale ">
+                                    	{% if product.status %}
                                         <span class="new">{{ product.status }}</span>
+                                    	{% endif %}
+                                    	{% if product.discounted_price != 0 %}
                                         <span class="percent">-{{ percentage }}%</span>
+                                    	{% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -83,8 +95,12 @@ function onStart()
                                 <div class="product__modal-img product__thumb w-img">
                                     <img src="{{ 'assets/images/H120AngleBack.jpg' | theme }}" alt="">
                                     <div class="product__sale ">
+                                    	{% if product.status %}
                                         <span class="new">{{ product.status }}</span>
+                                    	{% endif %}
+                                    	{% if product.discounted_price != 0 %}
                                         <span class="percent">-{{ percentage }}%</span>
+                                    	{% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -105,14 +121,19 @@ function onStart()
                         <h4 class="text-orange"><a href="product-details.html">{{ product.name }}</a></h4>
                         <!-- <h4><a href="product-details.html">{{ product.name }}</a></h4> -->
                         <div class="product__price-2 mb-25">
-                            <span>Rp {{ product.discounted_price }}</span>
-                            <span class="old-price">Rp {{ product.price }}</span>
+                        	{% if product.discounted_price != 0 %}
+                            <span>Rp {{ discount_price }}</span>
+                            <span class="old-price">Rp {{ price }}</span>
+                            {% else %}
+                            <span>Rp {{ price }}</span>
+                            {% endif %}
                         </div>
                         <div class="product__modal-des mb-30">
                             <p>{{ product.short_description }}</p>
                         </div>
                         <div class="product__modal-form mb-30">
                             <form action="#">
+                            	<!--
                                 <div class="product__modal-input color mb-20">
                                     <label>Color <i class="fas fa-star-of-life"></i></label>
                                     <select>
@@ -121,6 +142,7 @@ function onStart()
                                         <option> White</option>
                                     </select>
                                 </div>
+                            	-->
                                 <div class="product__modal-required mb-5">
                                     <span >Required Fiields *</span>
                                 </div>
