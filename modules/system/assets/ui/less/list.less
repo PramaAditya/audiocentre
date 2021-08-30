@@ -450,22 +450,31 @@ table.table.data {
 
         .list-setup {
             width: 48px;
+            vertical-align: middle;
+
             a {
-                display: block;
-                color: #000000;
-                &:before {
-                    font-size: 14px;
-                    line-height: 14px;
-                    .icon(@list-ul);
-                    display: inline-block;
-                    margin-left: 8px;
-                    vertical-align: baseline;
-                    opacity: .6;
+                padding: 8px 15px;
+                > span {
+                    display: block;
+                    color: rgba(0,0,0,.5);
+                    background: @color-list-accent;
+                    width: 24px;
+                    height: 24px;
+                    text-align: center;
+                    border-radius: 3px;
+
+                    &:before {
+                        font-size: 14px;
+                        line-height: 14px;
+                        .icon(@list-ul);
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
                 }
 
-                &:hover:before {
-                    opacity: 1;
-                    color: @color-list-hover-bg !important;
+                &:hover > span {
+                    color: #333333;
+                    background: rgba(215,225,234,.7);
                 }
             }
         }

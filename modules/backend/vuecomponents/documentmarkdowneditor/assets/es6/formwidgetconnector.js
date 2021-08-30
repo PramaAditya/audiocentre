@@ -50,6 +50,10 @@ Vue.component('backend-component-documentmarkdowneditor-formwidgetconnector', {
         onToolbarCommand: function onToolbarCommand(cmd) {
             if (cmd == 'document:toggleFullscreen') {
                 this.fullScreen = !this.fullScreen;
+
+                Vue.nextTick(() => {
+                    this.$refs.markdownEditor.refresh();
+                });
             }
         }
     },

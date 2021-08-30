@@ -60,7 +60,8 @@ class NestedForm extends FormWidgetBase
         $config->arrayName = $this->getFieldName();
         $config->isNested = true;
 
-        if (object_get($this->getParentForm()->config, 'enableDefaults') === true) {
+        // Pull config from parent
+        if ($this->getParentForm()->getConfig('enableDefaults') === true) {
             $config->enableDefaults = true;
         }
 

@@ -3,15 +3,13 @@
 use October\Rain\Html\Helper as HtmlHelper;
 
 /**
- * Form Widget base class
- * Widgets used specifically for forms
+ * FormWidgetBase class contains widgets used specifically for forms
  *
  * @package october\backend
  * @author Alexey Bobkov, Samuel Georges
  */
 abstract class FormWidgetBase extends WidgetBase
 {
-
     //
     // Configurable properties
     //
@@ -66,7 +64,7 @@ abstract class FormWidgetBase extends WidgetBase
     protected $valueFrom;
 
     /**
-     * Constructor
+     * __construct
      * @param $controller Controller Active controller object.
      * @param $formField FormField Object containing general form field information.
      * @param $configuration array Configuration the relates to this widget.
@@ -92,8 +90,7 @@ abstract class FormWidgetBase extends WidgetBase
     }
 
     /**
-     * Retrieve the parent form for this formwidget
-     *
+     * getParentForm retrieves the parent form for this formwidget
      * @return Backend\Widgets\Form|null
      */
     public function getParentForm()
@@ -102,8 +99,8 @@ abstract class FormWidgetBase extends WidgetBase
     }
 
     /**
-     * Returns the HTML element field name for this widget, used for capturing
-     * user input, passed back to the getSaveValue method when saving.
+     * getFieldName returns the HTML element field name for this widget, used for
+     * capturing user input, passed back to the getSaveValue method when saving.
      * @return string HTML element name
      */
     public function getFieldName()
@@ -112,7 +109,7 @@ abstract class FormWidgetBase extends WidgetBase
     }
 
     /**
-     * Returns a unique ID for this widget. Useful in creating HTML markup.
+     * getId returns a unique ID for this widget. Useful in creating HTML markup.
      */
     public function getId($suffix = null)
     {

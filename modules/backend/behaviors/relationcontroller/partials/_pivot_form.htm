@@ -51,7 +51,9 @@
 
             <!-- Passable fields -->
             <input type="hidden" name="_relation_field" value="<?= $relationField ?>" />
-            <input type="hidden" name="foreign_id" value="<?= $foreignId ?>" />
+            <?php foreach ((array) $foreignId as $fid): ?>
+                <input type="hidden" name="foreign_id[]" value="<?= $fid ?>" />
+            <?php endforeach ?>
 
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="popup">&times;</button>

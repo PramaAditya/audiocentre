@@ -127,8 +127,8 @@ class DataTable extends FormWidgetBase
         return $result;
     }
 
-    /*
-     * Populate data
+    /**
+     * populateTableWidget
      */
     protected function populateTableWidget()
     {
@@ -144,28 +144,28 @@ class DataTable extends FormWidgetBase
         $dataSource->initRecords((array) $records);
     }
 
+    /**
+     * makeTableWidget
+     */
     protected function makeTableWidget()
     {
         $config = $this->makeConfig((array) $this->config);
-
         $config->dataSource = 'client';
-        if (isset($this->getParentForm()->arrayName)) {
-            $config->alias = studly_case(HtmlHelper::nameToId($this->getParentForm()->arrayName . '[' . $this->fieldName . ']')) . 'datatable';
-            $config->fieldName = $this->getParentForm()->arrayName . '[' . $this->fieldName . ']';
-        } else {
-            $config->alias = studly_case(HtmlHelper::nameToId($this->fieldName)) . 'datatable';
-            $config->fieldName = $this->fieldName;
-        }
+
+        $arrayName = $this->getParentForm()->arrayName ?? null;
+        $fieldName = $arrayName ? $arrayName . '[' . $this->fieldName . ']' : $this->fieldName;
+
+        $config->alias = studly_case(HtmlHelper::nameToId($fieldName)) . 'datatable';
+        $config->fieldName = $fieldName;
 
         $table = new Table($this->controller, $config);
-
         $table->bindEvent('table.getDropdownOptions', [$this, 'getDataTableOptions']);
 
         return $table;
     }
 
     /**
-     * Dropdown/autocomplete option callback handler
+     * getDataTableOptions is a dropdown/autocomplete option callback handler
      *
      * Looks at the model for getXXXDataTableOptions or getDataTableOptions methods
      * to obtain values for autocomplete and dropdown column types.

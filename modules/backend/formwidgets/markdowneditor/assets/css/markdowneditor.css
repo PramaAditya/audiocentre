@@ -162,6 +162,9 @@
 .field-markdowneditor.vue-mode .CodeMirror-wrap {
   border-bottom-left-radius: 4px !important;
 }
+.field-markdowneditor.vue-mode .CodeMirror-scroll {
+  min-height: 20px!important;
+}
 .field-markdowneditor.vue-mode .component-backend-document .document-content-container {
   border-bottom-right-radius: 4px !important;
   border-bottom-left-radius: 4px !important;

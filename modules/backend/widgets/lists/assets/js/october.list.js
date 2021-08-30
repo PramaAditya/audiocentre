@@ -43,18 +43,18 @@
         });
 
         this.$el.on('ajaxSetup', this.proxy(this.beforeAjaxRequest));
-        this.$head.on('change', this.options.checkboxSelector, this.proxy(this.toggleHeadCheckbox))
-        this.$body.on('change', this.options.checkboxSelector, this.proxy(this.toggleBodyCheckbox))
-        this.$body.on('click', this.options.checkboxSelector, this.proxy(this.clickBodyCheckbox))
+        this.$body.on('click', '.list-checkbox > .checkbox', this.proxy(this.clickBodyCheckbox));
+        this.$body.on('change', this.options.checkboxSelector, this.proxy(this.toggleBodyCheckbox));
+        this.$head.on('change', this.options.checkboxSelector, this.proxy(this.toggleHeadCheckbox));
 
         this.updateUi();
     }
 
     ListWidget.prototype.dispose = function() {
         this.$el.off('ajaxSetup', this.proxy(this.beforeAjaxRequest));
-        this.$head.off('change', this.options.checkboxSelector, this.proxy(this.toggleHeadCheckbox))
-        this.$body.off('change', this.options.checkboxSelector, this.proxy(this.toggleBodyCheckbox))
-        this.$body.off('click', this.options.checkboxSelector, this.proxy(this.clickBodyCheckbox))
+        this.$body.off('click', '.list-checkbox > .checkbox', this.proxy(this.clickBodyCheckbox));
+        this.$body.off('change', this.options.checkboxSelector, this.proxy(this.toggleBodyCheckbox));
+        this.$head.off('change', this.options.checkboxSelector, this.proxy(this.toggleHeadCheckbox));
 
         this.$el.removeData('oc.listwidget');
 
@@ -65,10 +65,6 @@
         this.options = null;
 
         BaseProto.dispose.call(this);
-    }
-
-    ListWidget.prototype.beforeAjaxRequest = function(ev, data) {
-        data.options.data.allChecked = this.getAllChecked();
     }
 
     ListWidget.prototype.updateUi = function() {
@@ -157,7 +153,7 @@
             $prevTr = $prevEl.closest('tr'),
             toSelect = [];
 
-        var $nextRow = $tr.next();
+        var $nextRow = $tr;
         while ($nextRow.length) {
             if ($nextRow.get(0) === $prevTr.get(0)) {
                 this.selectCheckboxesIn(toSelect, this.isLastChecked);
@@ -169,7 +165,7 @@
         }
 
         toSelect = [];
-        var $prevRow = $tr.prev();
+        var $prevRow = $tr;
         while ($prevRow.length) {
             if ($prevRow.get(0) === $prevTr.get(0)) {
                 this.selectCheckboxesIn(toSelect, this.isLastChecked);
@@ -231,6 +227,10 @@
         $checkbox
             .prop('checked', !$checkbox.is(':checked'))
             .trigger('change');
+    }
+
+    ListWidget.prototype.beforeAjaxRequest = function(ev, data) {
+        data.options.data.allChecked = this.getAllChecked();
     }
 
     // LIST WIDGET PLUGIN DEFINITION
